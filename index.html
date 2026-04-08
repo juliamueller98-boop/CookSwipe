@@ -94,48 +94,11 @@
       display: block;
     }
 
-    .hero-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px;
-      position: relative;
-      z-index: 3;
-    }
+    .hero-top { display: none; }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.34);
-      border: 1px solid rgba(255,255,255,0.28);
-      color: rgba(75,48,31,0.92);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 6px 18px rgba(57,33,19,0.08);
-    }
+    .eyebrow { display: none; }
 
-    .hero-badge {
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.36);
-      color: rgba(75,48,31,0.92);
-      border: 1px solid rgba(255,255,255,0.3);
-      font-size: 0.8rem;
-      font-weight: 800;
-      white-space: nowrap;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 6px 18px rgba(57,33,19,0.08);
-    }
+    .hero-badge { display: none; }
 
     .hero-copy { display: none; }
 
@@ -686,10 +649,7 @@
   <main class="app">
     <section class="glass hero">
       <div class="hero-inner">
-        <div class="hero-top">
-          <div class="eyebrow">CookSwipe</div>
-          <div class="hero-badge" id="recipeCount">0 Rezepte</div>
-        </div>
+        
         
       </div>
     </section>
@@ -1354,7 +1314,6 @@
     const tabsEl = document.getElementById('tabs');
     const cardStack = document.getElementById('cardStack');
     const savedList = document.getElementById('savedList');
-    const recipeCount = document.getElementById('recipeCount');
     const modal = document.getElementById('recipeModal');
     const sheetContent = document.getElementById('sheetContent');
     const searchInput = document.getElementById('searchInput');
@@ -1375,7 +1334,7 @@
     }
 
     function updateSummary() {
-      recipeCount.textContent = `${getAllRecipes().length} Rezepte`;
+      return getAllRecipes().length;
     }
 
     function renderTabs() {
